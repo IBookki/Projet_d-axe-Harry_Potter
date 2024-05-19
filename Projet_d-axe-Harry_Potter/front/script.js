@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const sidebar = document.querySelector(".sidebar");
   const characterDetails = document.getElementById("character-details");
 
+  // Sélectionner les éléments du formulaire de connexion et d'inscription
   const login = document.getElementById("login-form");
   const signin = document.getElementById("signin-form");
 
@@ -64,9 +65,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     const data = await response.json();
- 
+
+    // Vérifiez si les données de profil ont été correctement récupérées
     if (response.ok) {
       const emailElement = document.getElementById("user-email");
+      // Vérifiez si l'élément où afficher l'e-mail existe
       if (emailElement) {
         emailElement.textContent = data.email;
       }
@@ -76,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   menuToggle.addEventListener("click", function () {
+    // Toggle the "show" class on the sidebar
     sidebar.classList.toggle("show");
   });
 
@@ -87,7 +91,6 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", () => {
       const selectedHouse = button.dataset.house;
       filterCharactersByHouse(selectedHouse);
-      allCharactersDisplayed = false;
     });
   });
 
@@ -97,6 +100,8 @@ document.addEventListener("DOMContentLoaded", function () {
       allCharactersDisplayed = true;
     }
   });
+
+  displayCharacters(); // Afficher toutes les cartes au chargement de la page
 
   async function filterCharactersByHouse(house) {
     const data = await fetchCharacters();
@@ -108,14 +113,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function displayFilteredCharacters(characters) {
     const charactersContainer = document.querySelector("#characters");
-    charactersContainer.innerHTML = ""; 
+    charactersContainer.innerHTML = "";
+    allCharactersDisplayed = true;
+
     characters.forEach((character) => {
       charactersContainer.innerHTML += `
-        <div class="card" data-name="${character.name}" data-house="${character.house}" data-actor="${character.actor}">
-          <img src="${character.image}" alt="${character.name}">
-        </div>
-      `;
+                <div class="card" data-name="${character.name}" data-house="${character.house}" data-actor="${character.actor}">
+                    <img src="${character.image}" alt="${character.name}">
+                </div>
+            `;
     });
+
     attachEventListeners();
   }
 
@@ -165,16 +173,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   async function displayCharacters() {
-    const charactersContainer = document.querySelector("#characters");
-    charactersContainer.innerHTML = "";
     const data = await fetchCharacters();
     data.forEach((character) => {
-      charactersContainer.innerHTML += `
-        <div class="card" data-name="${character.name}" data-house="${character.house}" data-actor="${character.actor}">
-          <img src="${character.image}" alt="${character.name}">
-        </div>
-      `;
+      document.querySelector("#characters").innerHTML += `
+                    <div class="card" data-name="${character.name}" data-house="${character.house}" data-actor="${character.actor}">
+                        <img src="${character.image}" alt="${character.name}">
+                    </div>
+                `;
     });
+
     attachEventListeners();
   }
 
@@ -191,10 +198,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const detailsContainer =
           document.querySelector("#character-details");
         detailsContainer.innerHTML = `
-          <h2>${name}</h2>
-          <p><strong>House:</strong> ${house}</p>
-          <p><strong>Actor:</strong> ${actor}</p>
-        `;
+                    <h2>${name}</h2>
+                    <p><strong>House:</strong> ${house}</p>
+                    <p><strong>Actor:</strong> ${actor}</p>
+                `;
 
         detailsContainer.classList.remove("hidden");
         UpdateHouse(house);
@@ -223,3 +230,4 @@ menu_btn.addEventListener("click", () => {
   sidebar.classList.toggle("active-nav");
   container.classList.toggle("active-cont");
 });
+
