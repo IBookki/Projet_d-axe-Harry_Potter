@@ -1,0 +1,548 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+ 
+}
+
+
+.card {
+    flex-basis: calc(33.33% - 20px);
+    margin: 10px;
+}
+
+#characters{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+
+}
+
+img{
+    border:5px solid black;
+    width: 100%;   
+    display: block;
+    margin: 0 auto;
+    background-color:antiquewhite;
+    object-fit: cover;
+    height: 300px;
+    object-position: top;
+
+}
+
+#characters a{
+    height: 300px;
+    width: 250px;
+}
+
+header.header {
+    display:flex;
+    align-items:center;
+    background-color:rgb(127, 117, 173);
+    height: 130px;
+    border: 5px solid black;
+}
+
+header.header img{
+    width: 65px;
+}
+
+nav.nav {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width:260px;
+    margin-left: 45px;
+    
+}
+
+nav.nav li {
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.hidden {
+    display: none; 
+}
+
+#character-details {
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: #fff; 
+    padding: 20px;
+    border: 2px solid black;
+    max-width: 80%;
+    text-align: center;
+}
+
+#character-details h2 {
+    margin-top: 0;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card img {
+    width: 500px;
+    height: 800px; 
+    border: 5px solid black;
+    background-color: antiquewhite;
+    object-fit: cover;
+    object-position: top;
+}
+
+.card a {
+    height: 300px;
+    width: 250px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: inherit; 
+}
+
+#title{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 170px;
+    padding: 40px_z"
+}
+   
+.sidebar {
+  
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 600px; /* ou la largeur que vous souhaitez */
+    background-color: hsl(240, 35%, 92%);
+    border: 1px solid black;
+    transition: transform 0.3s ease-in-out; /* Ajoutez une transition pour une animation fluide */
+    transform: translateX(-100%); /* Cachez la sidebar en dehors de l'écran par défaut */
+}
+
+.sidebar.show {
+    transform: translateX(0); /* Affichez la sidebar en déplaçant sa position vers la gauche */
+}
+
+.mobile-only {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .mobile-only {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    /* Cacher la top-barre sur les petits écrans */
+    .main-nav{
+        display: none;
+    }
+    .wrapper{
+        display: none;
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .navbar.top
+    .menu-toggle {
+        display: none;
+    }
+}
+
+#houses {
+    margin-top: 20px;
+  }
+  
+  .house-button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .house-button:hover {
+    background-color: #0056b3;
+  }
+  
+/* CSS Variables */
+:root {
+    --primary: #ddd;
+    --dark: #333;
+    --light: #fff;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  }
+  
+  html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--dark);
+  }
+  
+  body {
+    background: #ccc;
+    margin: 30px 50px;
+    line-height: 1.4;
+  }
+  
+  .btn {
+    background: var(--dark);
+    color: var(--light);
+    padding: 0.6rem 1.3rem;
+    text-decoration: none;
+    border: 0;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  .wrapper {
+    display: grid;
+    grid-gap: 20px;
+  }
+  
+  /* Navigation */
+  .main-nav ul {
+    display: grid;
+    grid-gap: 20px;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .main-nav a {
+    background: var(--primary);
+    display: block;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align: center;
+    color: var(--dark);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    box-shadow: var(--shadow);
+  }
+  
+  .main-nav a:hover {
+    background: var(--dark);
+    color: var(--light);
+  }
+  
+  /* Top Container */
+  .top-container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+      'showcase showcase top-box-a'
+      'showcase showcase top-box-b';
+  }
+  
+  /* Showcase */
+  .showcase {
+    grid-area: showcase;
+    min-height: 400px;
+    background: url(https://www.mycinerama.com/wp-content/uploads/2023/04/Harry-Potter-fond-ecran-wallpaper-hd-4k--900x506.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    box-shadow: var(--shadow);
+  }
+  
+  .showcase h1 {
+    font-size: 4rem;
+    margin-bottom: 0;
+    color: var(--light);
+  }
+  
+  .showcase p {
+    font-size: 1.3rem;
+    margin-top: 0;
+    color: var(--light);
+  }
+  
+  /* Top Box */
+  .top-box {
+    background: var(--primary);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+  }
+  
+  .top-box .price {
+    font-size: 2.5rem;
+  }
+  
+  .top-box-a {
+    grid-area: top-box-a;
+  }
+  
+  .top-box-b {
+    grid-area: top-box-b;
+  }
+  
+  /* Boxes */
+  .boxes {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  .box {
+    background: var(--primary);
+    text-align: center;
+    padding: 1.5rem 2rem;
+    box-shadow: var(--shadow);
+  }
+  
+  /* Info */
+  .info {
+    background: var(--primary);
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3rem;
+  }
+  
+  /* Portfolio */
+  .portfolio {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  .portfolio img {
+    width: 100%;
+    box-shadow: var(--shadow);
+  }
+  
+  /* Footer */
+  footer {
+    margin-top: 2rem;
+    background: var(--dark);
+    color: var(--light);
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 700px) {
+    .top-container {
+      grid-template-areas:
+        'showcase showcase'
+        'top-box-a top-box-b';
+    }
+  
+    .showcase h1 {
+      font-size: 2.5rem;
+    }
+  
+    .main-nav ul {
+      grid-template-columns: 1fr;
+    }
+  
+    .info {
+      grid-template-columns: 1fr;
+    }
+  
+    .info .btn {
+      display: block;
+      text-align: center;
+      margin: auto;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .top-container {
+      grid-template-areas:
+        'showcase'
+        'top-box-a'
+        'top-box-b';
+    }
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    min-height: 100vh;
+    background-color: #fff;
+  }
+  
+  .side-navbar {
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    margin-left: -300px;
+    background-color: #100901;
+    transition: 0.5s;
+    z-index: 1000;
+  }
+  
+  .nav-link:active,
+  .nav-link:focus,
+  .nav-link:hover {
+    background-color: #ffffff26;
+  }
+  
+  .my-container {
+    transition: 0.4s;
+  }
+  
+  .active-nav {
+    margin-left: 0;
+  }
+  
+  #menu-btn {
+    background-color: #100901;
+    color: #fff;
+    margin-left: -62px;
+  }
+  
+  .my-container input {
+    border-radius: 2rem;
+    padding: 2px 20px;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Noto+Sans&display=swap');
+
+:root {
+  font-size: 1.5rem;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.button1 {color: white;
+	height: 2.5rem;
+	width: 7rem;
+	border-radius: 0.5rem;
+	display: grid;
+	position: relative;
+	margin-left: 400px; /* Exemple avec un déplacement en pourcentage */
+}
+.button1:after {
+	position: absolute;
+	content: "";
+	inset: 0.125rem;
+	background: black;
+	border-radius: 0.375rem;
+	z-index: 1;
+	transition: border-radius 300ms;
+}
+.button1:has(.hoverzone1:hover):after {
+	border-radius: 0;
+}
+.button1:before {
+	position: absolute;
+	content: "";
+	inset: 0;
+	border-radius: 0.5rem;
+	background: linear-gradient(135deg, #3cfd7f, #02fa99, #00f6af, #00f1c1);
+	filter: blur(0.5rem);
+	opacity: 0.5;
+	transition: opacity 300ms, filter 300ms;
+}
+.button1:has(.hoverzone1:hover):before {
+	filter: none;
+}
+
+.hoverzone1 {
+	position: absolute;
+	inset: 0;
+	cursor: pointer;
+	z-index: 10;
+}
+
+.sharpshadow1 {
+	--anim1: 0;
+	--shadowlength1: 0.75rem;
+	background: linear-gradient(135deg, #3cfd7f, #02fa99, #00f6af, #00f1c1);
+	position: absolute;
+	border-radius: 0.5rem;
+	inset: 0 calc(0px - var(--shadowlength1) * var(--anim1)) calc(0px - var(--shadowlength1) * var(--anim1)) 0;
+	clip-path: polygon(
+		0 0,
+		calc(100% - var(--shadowlength1) * var(--anim1)) 0%,
+		100% calc(var(--shadowlength1) * var(--anim1)),
+		100% 100%,
+		calc(var(--shadowlength1) * var(--anim1)) 100%,
+		0 calc(100% - var(--shadowlength1) * var(--anim1))
+	);
+	transition: --anim1 300ms, border-radius 300ms;
+}
+.button1:has(.hoverzone1:hover) > .sharpshadow1 {
+	border-radius: 0;
+	--anim1: 1;
+}
+
+@property --shadowlength1 {
+  syntax: "<length>";
+  initial-value: 0.5rem;
+  inherits: true;
+}
+@property --anim1 {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: true;
+}
+
+.label1 {
+	position: absolute;
+	inset: 0;
+	display: grid;
+	place-content: center;
+	z-index: 2;
+	transition: opacity 300ms, transform 300ms;
+}
+.label1.soft1 {
+  font-family: "Inter";
+	font-weight: 500;
+}
+.button1:has(.hoverzone1:hover) > .label1.soft1 {
+	opacity: 0;
+	transform: translate(0.5rem, 0.5rem);
+}
+.label1.sharp1 {
+	font-family: "Arvo";
+	opacity: 0;
+	transform: translate(-0.5rem, -0.5rem);
+}
+.button1:has(.hoverzone1:hover) > .label1.sharp1 {
+	opacity: 1;
+	transform: none;
+}
+
+.booster img {
+  width: 40%; /* Pour que l'image remplisse la carte */
+  height: auto; /* Pour maintenir le ratio d'aspect */
+  display: block; /* Pour éviter les marges indésirables */
+}
